@@ -44,19 +44,19 @@ instance.show()
 }
 
 
-
-function onShow() {
-	window.addEventListener("keydown", onEscPress);
+function onShow () {
+window.addEventListener('keydown',onKeyDown )
 }
 
-function onClose() {
-	window.removeEventListener("keydown", onEscPress);
+function onKeyDown(event){
+  if(event.code === 'Escape'){
+    instance.close()
+  }
+  onClose()
 }
 
-function onEscPress(event) {
-	if (event.code === "Escape") {
-		instance.close();
-		onClose();
-	}
+
+function onClose(){
+  window.removeEventListener('keydown', onKeyDown )
 }
 
